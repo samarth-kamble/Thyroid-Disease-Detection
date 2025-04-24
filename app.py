@@ -75,11 +75,11 @@ if st.button('Predict Probability'):
         # Make sure to convert input_data to the same format as x_test used during training
         result_prob = model.predict(input_data)  # Assuming binary classification
         if result_prob == 0:
-            st.markdown("<h2 style='color: red;'>The Patient Has Hyperthyroid Problem</h2>", unsafe_allow_html=True)
+            st.markdown("<h2 style='color: red;'>Hyperthyroid Detected</h2>", unsafe_allow_html=True)
         elif result_prob == 1:
-            st.markdown("<h2 style='color: red;'>The Patient Has Hypothyroid Problem</h2>", unsafe_allow_html=True)
+            st.markdown("<h2 style='color: red;'>Hypothyroid Detected</h2>", unsafe_allow_html=True)
         elif result_prob == 2:
-            st.markdown("<h2 style='color: green;'>The Patient Has Negative</h2>", unsafe_allow_html=True)
+            st.markdown("<h2 style='color: green;'>Negative</h2>", unsafe_allow_html=True)
         
     except Exception as e:
         st.error(f"Error predicting Probability: {e}")
